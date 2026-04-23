@@ -12,13 +12,19 @@
     --text-primary: #f8fafc;
     --text-secondary: #a1a1aa;
     --border: rgba(255, 255, 255, 0.08);
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: var(--font-mono);
 }
 
 body {
