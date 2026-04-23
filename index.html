@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Final Review Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DSA <span>Mastery</span></div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" data-target="flashcards-section">Flashcards</a></li>
+            <li><a href="#" data-target="quiz-section">Quiz</a></li>
+            <li><a href="#" data-target="visuals-section">Visuals</a></li>
+            <li><a href="prompts.html" class="prompts-btn">AI Prompts Log</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Flashcards Section -->
+        <section id="flashcards-section" class="content-section active-section">
+            <div class="header-text">
+                <h1>Review Flashcards</h1>
+                <p>Click the card to reveal the answer. Use the arrows to navigate.</p>
+            </div>
+            
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h2 id="fc-question">Question goes here</h2>
+                        </div>
+                        <div class="flashcard-back">
+                            <p id="fc-answer">Answer goes here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prev-btn" class="btn secondary">Previous</button>
+                <span id="card-counter">1 / 5</span>
+                <button id="next-btn" class="btn primary">Next</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="content-section">
+            <div class="header-text">
+                <h1>Knowledge Check</h1>
+                <p>Test your understanding with multiple choice questions.</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="quiz-question-text">Question goes here</div>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options populated by JS -->
+                </div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+                <button id="next-quiz-btn" class="btn primary hidden">Next Question</button>
+            </div>
+            
+            <div class="quiz-score" id="quiz-score">Score: 0 / 0</div>
+        </section>
+
+        <!-- Visuals Section -->
+        <section id="visuals-section" class="content-section">
+            <div class="header-text">
+                <h1>Data Structure Visuals</h1>
+                <p>Understand the topology of core data structures.</p>
+            </div>
+            
+            <div class="visuals-grid">
+                <!-- Visual Card 1 -->
+                <div class="visual-card">
+                    <h3>Binary Search Tree</h3>
+                    <div class="mermaid">
+                        graph TD
+                            A((8)) --> B((3))
+                            A --> C((10))
+                            B --> D((1))
+                            B --> E((6))
+                            E --> F((4))
+                            E --> G((7))
+                            C --> H((14))
+                            H --> I((13))
+                    </div>
+                </div>
+
+                <!-- Visual Card 2 -->
+                <div class="visual-card">
+                    <h3>Linked List</h3>
+                    <div class="mermaid">
+                        graph LR
+                            A[Head: 12] --> B[99]
+                            B --> C[37]
+                            C --> D[Null]
+                            style D fill:#f9f,stroke:#333,stroke-width:2px
+                    </div>
+                </div>
+                
+                <!-- Visual Card 3 -->
+                <div class="visual-card">
+                    <h3>Hash Table (Chaining)</h3>
+                    <div class="mermaid">
+                        graph LR
+                            subgraph Array
+                            0
+                            1
+                            2
+                            3
+                            end
+                            1 --> Node1["Key: A, Val: 5"]
+                            Node1 --> Node2["Key: Z, Val: 9"]
+                            3 --> Node3["Key: X, Val: 1"]
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

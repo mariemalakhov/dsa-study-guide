@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompts Log - DSA Mastery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .prompts-container {
+            background: var(--surface-color);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+        .prompt-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .prompt-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .prompt-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .prompt-result {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            padding-left: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DSA <span>Mastery</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Back to App</a></li>
+            <li><a href="prompts.html" class="active prompts-btn">AI Prompts Log</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="header-text">
+            <h1>How I Built This</h1>
+            <p>A log of the AI prompts used to generate this entire website, per the assignment requirements.</p>
+        </div>
+
+        <div class="prompts-container">
+            
+            <div class="prompt-item">
+                <div class="prompt-text">
+                    Prompt 1: "i need to build a website for my class this is the exact assignment: Requirements: 1. You will build a website completely using one of the AI autocoding tools... I was thinking of asking AI to create me a dynamic website..."
+                </div>
+                <div class="prompt-result">
+                    <strong>Result:</strong> Antigravity analyzed the assignment and proposed several project ideas, including a Course Manager. It created an initial implementation plan outlining the steps: build the app, document the prompts, and deploy it publicly.
+                </div>
+            </div>
+
+            <div class="prompt-item">
+                <div class="prompt-text">
+                    Prompt 2: "i want to create an interactive website to help me study for my final exam for data structures and algorithms. I can provide a file of our final review"
+                </div>
+                <div class="prompt-result">
+                    <strong>Result:</strong> The AI updated the implementation plan to specifically build a Data Structures and Algorithms study tool. It asked for preferences on the format (flashcards vs quiz) and requested the review file.
+                </div>
+            </div>
+
+            <div class="prompt-item">
+                <div class="prompt-text">
+                    Prompt 3: "i want a section for flashcards, multiple choice, and visuals of the structures. I do have a github account."
+                </div>
+                <div class="prompt-result">
+                    <strong>Result:</strong> The AI generated the complete codebase (`index.html`, `style.css`, `script.js`) featuring a modern, dark-mode design with three functional tabs: a 3D flipping Flashcard section, an interactive Multiple Choice quiz with scoring, and a Visuals section utilizing Mermaid.js for beautiful graph rendering. It also generated this specific Prompts page.
+                </div>
+            </div>
+
+            <div class="prompt-item">
+                <div class="prompt-text">
+                    Prompt 4: "I want to deploy this as a public website on GitHub Pages." 
+                    <br><em>(Anticipated)</em>
+                </div>
+                <div class="prompt-result">
+                    <strong>Result:</strong> The AI initialized a Git repository, committed all the generated code, and provided the exact terminal commands (or automated the process) to push the repository to GitHub and enable GitHub Pages, resulting in a live, public URL.
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
