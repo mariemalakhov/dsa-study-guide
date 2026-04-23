@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Final Review</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: false, theme: 'dark', themeVariables: { fontFamily: 'JetBrains Mono' } });
@@ -135,10 +135,27 @@
             </div>
             
             <div class="visuals-grid">
-                <!-- Visual Card 1: Merge Sort -->
+                
+                <div style="grid-column: 1 / -1;"><h2 class="algorithm-title" style="margin-top: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">1. Sorting Algorithms</h2></div>
+
                 <div class="visual-card glass">
-                    <h3>Merge Sort (Divide & Conquer)</h3>
-                    <p>Recursively divides the array until size is 1, then merges.</p>
+                    <h3 class="algorithm-title">Insertion Sort</h3>
+                    <p>Inserts elements into a sorted subarray. O(n^2)</p>
+                    <div class="mermaid">
+graph LR
+    subgraph Sorted
+        n1["[2, 5]"]
+    end
+    subgraph Unsorted
+        n2["[4, 9, 1]"]
+    end
+    n2 -. "Insert 4" .-> n1
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Merge Sort</h3>
+                    <p>Divide & Conquer. Recursively splits and merges. O(n log n)</p>
                     <div class="mermaid">
 graph TD
     A["[38, 27, 43, 3]"] --> B["[38, 27]"]
@@ -150,50 +167,263 @@ graph TD
                     </div>
                 </div>
 
-                <!-- Visual Card 2: Binary Search Tree -->
                 <div class="visual-card glass">
-                    <h3>Binary Search Tree</h3>
-                    <p>In-order traversal: Left, Root, Right (Yields sorted order).</p>
+                    <h3 class="algorithm-title">Heap Sort</h3>
+                    <p>Uses a Max-Heap structure for O(n log n) sorting.</p>
+                    <div class="mermaid">
+graph TD
+    H1((16)) --> H2((14))
+    H1 --> H3((10))
+    H2 --> H4((8))
+    H2 --> H5((7))
+    H3 --> H6((9))
+    H3 --> H7((3))
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Quick Sort</h3>
+                    <p>Partitions around a pivot. Best in practice.</p>
+                    <div class="mermaid">
+graph TD
+    Q1["Pivot: 5 | [3, 1, 8, 4, 7]"] --> Q2["Left (<5): [3, 1, 4]"]
+    Q1 --> Q3["Right (>5): [8, 7]"]
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Counting Sort</h3>
+                    <p>Counts occurrences for O(n+k) linear sorting.</p>
+                    <div class="mermaid">
+classDiagram
+    class Counting_Array_C {
+        Index_0 : Count_0
+        Index_1 : Count_2
+        Index_2 : Count_2
+        Index_3 : Count_3
+        Index_4 : Count_5
+    }
+                    </div>
+                </div>
+
+                <div style="grid-column: 1 / -1;"><h2 class="algorithm-title" style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">2. Basic Data Structures</h2></div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Stack</h3>
+                    <p>LIFO (Last-In, First-Out).</p>
+                    <div class="mermaid">
+graph TD
+    Push --> top["Top (Last-In)"]
+    top --> Pop
+    top --- mid["Element"]
+    mid --- bot["Bottom"]
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Queue</h3>
+                    <p>FIFO (First-In, First-Out).</p>
+                    <div class="mermaid">
+graph LR
+    Enqueue --> Tail["Tail"]
+    Tail --- mid["Element"]
+    mid --- Head["Head"]
+    Head --> Dequeue
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Doubly Linked List</h3>
+                    <p>Each node has a next and prev pointer.</p>
+                    <div class="mermaid">
+graph LR
+    Head["Head"] <--> N1["Node 1"]
+    N1 <--> N2["Node 2"]
+    N2 <--> Tail["Tail"]
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Binary Tree</h3>
+                    <p>Each node has at most two children.</p>
+                    <div class="mermaid">
+graph TD
+    Parent((P)) --> LeftChild((L))
+    Parent --> RightChild((R))
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Binary Search Tree</h3>
+                    <p>Left child < Parent < Right child.</p>
                     <div class="mermaid">
 graph TD
     Root((10)) --> Left((5))
     Root --> Right((15))
                     </div>
                 </div>
-                
-                <!-- Visual Card 3: Dynamic Programming (LCS) -->
+
+                <div style="grid-column: 1 / -1;"><h2 class="algorithm-title" style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">3. Dynamic Programming</h2></div>
+
                 <div class="visual-card glass">
-                    <h3>DP Memoization Table</h3>
-                    <p>Caching subproblems to avoid redundant calculations.</p>
+                    <h3 class="algorithm-title">Rod Cut</h3>
+                    <p>Finds max revenue by testing all sub-cuts.</p>
                     <div class="mermaid">
 classDiagram
-    class Fibonacci_Table {
-        n=0 : Fib=0
-        n=1 : Fib=1
-        n=2 : Fib=1
-        n=3 : Fib=2
-        n=4 : Fib=3
-        n=5 : Fib=5
+    class Max_Revenue_Memo {
+        Length=1 : MaxRev=1
+        Length=2 : MaxRev=5
+        Length=3 : MaxRev=8
+        Length=4 : MaxRev=10
     }
                     </div>
                 </div>
 
-                <!-- Visual Card 4: Graph BFS Traversals -->
                 <div class="visual-card glass">
-                    <h3>Breadth-First Search (BFS)</h3>
+                    <h3 class="algorithm-title">Matrix Multiplication</h3>
+                    <p>Optimal parenthesis grouping to minimize operations.</p>
+                    <div class="mermaid">
+classDiagram
+    class Min_Cost_m_ij {
+        i=1,j=2 : 15000
+        i=2,j=3 : 36000
+        i=1,j=3 : 43000
+    }
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Longest Common Subsequence</h3>
+                    <p>Finds longest shared sequence in 2D grid.</p>
+                    <div class="mermaid">
+classDiagram
+    class LCS_Table_c_ij {
+        i=1,j=1 : 1
+        i=1,j=2 : 1
+        i=2,j=2 : 2
+    }
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Optimal BST</h3>
+                    <p>Minimizes expected search cost.</p>
+                    <div class="mermaid">
+classDiagram
+    class Expected_Cost_e_ij {
+        i=1,j=1 : 0.45
+        i=2,j=2 : 0.40
+        i=1,j=2 : 0.90
+    }
+                    </div>
+                </div>
+
+                <div style="grid-column: 1 / -1;"><h2 class="algorithm-title" style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">4. Graph Search Algorithms</h2></div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Breadth-First Search (BFS)</h3>
                     <p>Explores neighbors level by level using a Queue.</p>
                     <div class="mermaid">
 graph LR
     Center((C)) --- n1((1))
     Center --- n2((2))
     Center --- n3((3))
-    Center --- n4((4))
-    Center --- n5((5))
     n1 --- n2
     n2 --- n3
-    n3 --- n4
-    n4 --- n5
-    n5 --- n1
+    n3 --- n1
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Depth-First Search (DFS)</h3>
+                    <p>Explores deeply, records Discovery (d) and Finish (f) times.</p>
+                    <div class="mermaid">
+graph TD
+    A["A [d:1, f:10]"] --> B["B [d:2, f:5]"]
+    B --> C["C [d:3, f:4]"]
+    A --> D["D [d:6, f:9]"]
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Topological Sort</h3>
+                    <p>Linear ordering of a DAG based on dependencies.</p>
+                    <div class="mermaid">
+graph LR
+    Socks --> Shoes
+    Underwear --> Pants
+    Pants --> Shoes
+    Pants --> Belt
+    Shirt --> Belt
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Strongly Connected Component</h3>
+                    <p>Maximal sets where every vertex is reachable from every other.</p>
+                    <div class="mermaid">
+graph LR
+    subgraph SCC1
+        A --> B
+        B --> C
+        C --> A
+    end
+    subgraph SCC2
+        D --> E
+        E --> D
+    end
+    C --> D
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Prim's Min Spanning Tree</h3>
+                    <p>Grows MST one edge at a time using a Min-Priority Queue.</p>
+                    <div class="mermaid">
+graph LR
+    A((A)) ---|4| B((B))
+    B ---|8| C((C))
+    A ---|11| C
+    style A stroke:#10b981,stroke-width:4px
+    style B stroke:#10b981,stroke-width:4px
+    linkStyle 0 stroke:#10b981,stroke-width:4px
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Bellman-Ford</h3>
+                    <p>Shortest paths. Handles negative weight edges & cycle detection.</p>
+                    <div class="mermaid">
+graph LR
+    S((S)) -->|-5| A((A))
+    A -->|2| B((B))
+    B -->|-1| S
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Dijkstra's Algorithm</h3>
+                    <p>Shortest paths for non-negative edges via greedy selection.</p>
+                    <div class="mermaid">
+graph LR
+    S["S(0)"] -->|10| A["A(10)"]
+    S -->|5| B["B(5)"]
+    B -->|2| A
+    B -->|9| C["C(14)"]
+    A -->|1| C
+                    </div>
+                </div>
+
+                <div class="visual-card glass">
+                    <h3 class="algorithm-title">Floyd-Warshall</h3>
+                    <p>All-Pairs Shortest Path using DP distance matrix.</p>
+                    <div class="mermaid">
+classDiagram
+    class Distance_Matrix_D {
+        u=1,v=2 : Dist=5
+        u=1,v=3 : Dist=2
+        u=2,v=3 : Dist=-1
+    }
                     </div>
                 </div>
             </div>
