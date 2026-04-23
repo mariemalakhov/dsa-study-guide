@@ -100,6 +100,10 @@ document.querySelectorAll('.nav-links a[data-target]').forEach(link => {
         e.target.classList.add('active');
         const targetId = e.target.getAttribute('data-target');
         document.getElementById(targetId).classList.add('active-section');
+        
+        if (targetId === 'visuals-section' && window.mermaidObj) {
+            window.mermaidObj.init(undefined, document.querySelectorAll('.mermaid'));
+        }
     });
 });
 
