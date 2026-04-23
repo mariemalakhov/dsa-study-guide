@@ -139,19 +139,13 @@
                     <h3>Merge Sort (Divide & Conquer)</h3>
                     <p>Recursively divides the array until size is 1, then merges.</p>
                     <div class="mermaid">
-                        flowchart TD
-                            A["[38, 27, 43, 3]"] --> B["[38, 27]"]
-                            A --> C["[43, 3]"]
-                            B --> D["[38]"]
-                            B --> E["[27]"]
-                            C --> F["[43]"]
-                            C --> G["[3]"]
-                            D -. Merge .-> H["[27, 38]"]
-                            E -. Merge .-> H
-                            F -. Merge .-> I["[3, 43]"]
-                            G -. Merge .-> I
-                            H -. Merge .-> J["[3, 27, 38, 43]"]
-                            I -. Merge .-> J
+graph TD
+    A["[38, 27, 43, 3]"] --> B["[38, 27]"]
+    A --> C["[43, 3]"]
+    B --> D["[38]"]
+    B --> E["[27]"]
+    C --> F["[43]"]
+    C --> G["[3]"]
                     </div>
                 </div>
 
@@ -160,15 +154,9 @@
                     <h3>Binary Search Tree</h3>
                     <p>In-order traversal: Left, Root, Right (Yields sorted order).</p>
                     <div class="mermaid">
-                        flowchart TD
-                            A((15)) --> B((6))
-                            A --> C((18))
-                            B --> D((3))
-                            B --> E((7))
-                            C --> F((17))
-                            C --> G((20))
-                            E --> H((13))
-                            H --> I((9))
+graph TD
+    Root((10)) --> Left((5))
+    Root --> Right((15))
                     </div>
                 </div>
                 
@@ -177,15 +165,15 @@
                     <h3>DP Memoization Table</h3>
                     <p>Caching subproblems to avoid redundant calculations.</p>
                     <div class="mermaid">
-                        flowchart TD
-                            T["`
-                            | i / j | 0 | 1 | 2 | 3 |
-                            |:-----:|:-:|:-:|:-:|:-:|
-                            | **0** | 0 | 0 | 0 | 0 |
-                            | **1** | 0 | 1 | 1 | 1 |
-                            | **2** | 0 | 1 | 2 | 2 |
-                            | **3** | 0 | 1 | 2 | 3 |
-                            `"]
+classDiagram
+    class Fibonacci_Table {
+        n=0 : Fib=0
+        n=1 : Fib=1
+        n=2 : Fib=1
+        n=3 : Fib=2
+        n=4 : Fib=3
+        n=5 : Fib=5
+    }
                     </div>
                 </div>
 
@@ -194,18 +182,17 @@
                     <h3>Breadth-First Search (BFS)</h3>
                     <p>Explores neighbors level by level using a Queue.</p>
                     <div class="mermaid">
-                        flowchart TD
-                            S((S)) --> A((A))
-                            S --> C((C))
-                            A --> B((B))
-                            C --> D((D))
-                            C --> E((E))
-                            style S fill:#ef4444,stroke:#fff
-                            style A fill:#f59e0b,stroke:#fff
-                            style C fill:#f59e0b,stroke:#fff
-                            style B fill:#10b981,stroke:#fff
-                            style D fill:#10b981,stroke:#fff
-                            style E fill:#10b981,stroke:#fff
+graph LR
+    Center((C)) --- n1((1))
+    Center --- n2((2))
+    Center --- n3((3))
+    Center --- n4((4))
+    Center --- n5((5))
+    n1 --- n2
+    n2 --- n3
+    n3 --- n4
+    n4 --- n5
+    n5 --- n1
                     </div>
                 </div>
             </div>
