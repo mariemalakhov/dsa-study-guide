@@ -442,3 +442,56 @@ if (canvas) {
     initParticles();
     animateParticles();
 }
+
+// --- Explanations Modal Logic ---
+const explanationsData = {
+    "insertion-sort": "Insertion Sort works by taking elements from an unsorted list and inserting them into their correct position in a growing sorted sub-list, much like arranging poker cards in your hand. It is efficient for small or nearly sorted datasets but has a worst-case time complexity of O(n²).",
+    "merge-sort": "Merge Sort is a Divide-and-Conquer algorithm. It recursively splits the array in half until each sub-array has only one element (which is naturally sorted). Then, it repeatedly merges sub-arrays back together in sorted order. Its time complexity is consistently O(n log n).",
+    "heap-sort": "Heap Sort uses a specialized binary tree structure called a Max-Heap. It builds the heap so the largest element is at the root, swaps the root with the last element, and then heapifies the remaining elements. It guarantees an O(n log n) sorting time.",
+    "quick-sort": "Quick Sort is a Divide-and-Conquer algorithm that selects a 'pivot' element and partitions the array into two halves: elements less than the pivot and elements greater than the pivot. It sorts recursively. While its worst-case is O(n²), its average case O(n log n) performs exceptionally fast in practice.",
+    "counting-sort": "Counting Sort is a non-comparison sorting algorithm. It counts the number of occurrences of each unique element and uses arithmetic to determine their exact positions in the output array. If the range of elements 'k' is proportional to 'n', it runs in incredibly fast O(n + k) linear time.",
+    "stack": "A Stack is a dynamic data structure following the Last-In, First-Out (LIFO) policy. Elements are pushed onto the top and popped off the top. Think of it like a stack of plates.",
+    "queue": "A Queue is a dynamic data structure following the First-In, First-Out (FIFO) policy. Elements are enqueued at the tail and dequeued from the head. Think of it like a line at the grocery store.",
+    "doubly-linked-list": "A Doubly Linked List is a sequence of nodes where each node contains a value and two pointers: 'next' pointing to the subsequent node and 'prev' pointing to the preceding node. This allows fast bidirectional traversal and O(1) insertions/deletions if the node is known.",
+    "binary-tree": "A Binary Tree is a hierarchical structure where each node has at most two children, typically referred to as the left child and the right child. It forms the foundation for more complex tree-based search structures.",
+    "binary-search-tree": "A Binary Search Tree (BST) stores elements such that for any node, all keys in its left subtree are smaller, and all keys in its right subtree are larger. An in-order traversal of a BST will yield the elements in perfectly sorted order.",
+    "rod-cut": "The Rod Cutting problem uses Dynamic Programming to maximize revenue from cutting a rod into smaller pieces. It checks overlapping subproblems (cuts of varying lengths) and caches the maximum revenue for each length to avoid redundant calculations.",
+    "matrix-multiplication": "Matrix Chain Multiplication uses DP to determine the most efficient way to multiply a sequence of matrices. By placing parentheses optimally, it minimizes the total number of scalar multiplications required, evaluating overlapping grouping subproblems.",
+    "longest-common-subsequence": "The LCS algorithm finds the longest subsequence shared between two sequences. By building a 2D table, it compares characters step-by-step and caches the maximum sequence length up to those indices, solving overlapping subproblems iteratively.",
+    "optimal-bst": "An Optimal Binary Search Tree applies DP to construct a BST that minimizes the expected search cost, given the known frequencies of searching for each key. It evaluates all possible roots and caches the minimum cost of subtrees.",
+    "breadth-first-search-bfs": "Breadth-First Search (BFS) explores a graph level-by-level radiating outwards from a starting node. It uses a Queue to keep track of discovered but unvisited nodes and is excellent for finding the shortest path in unweighted graphs.",
+    "depth-first-search-dfs": "Depth-First Search (DFS) dives as deep as possible along a branch before backtracking. It records 'discovery' and 'finish' timestamps for each node. It often utilizes a Stack (or recursion) and is useful for detecting cycles and topological sorting.",
+    "topological-sort": "Topological Sort provides a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for every directed edge U -> V, U comes before V. It essentially orders tasks based on dependencies, like getting dressed.",
+    "strongly-connected-component": "A Strongly Connected Component (SCC) in a directed graph is a maximal subgraph where there is a path from every node to every other node in that subgraph. Finding SCCs helps group tightly interconnected clusters.",
+    "prim-s-min-spanning-tree": "Prim's Algorithm finds the Minimum Spanning Tree of a weighted undirected graph. It starts from an arbitrary node and greedily grows the tree by adding the cheapest edge connecting a tree node to a non-tree node, using a Min-Priority Queue.",
+    "bellman-ford": "The Bellman-Ford algorithm finds Single-Source Shortest Paths. Unlike Dijkstra's, it correctly handles negative edge weights. It iterates through all edges |V|-1 times, relaxing them, and can output 'false' if it detects a negative-weight cycle.",
+    "dijkstra-s-algorithm": "Dijkstra's Algorithm finds the shortest paths from a source to all other nodes in a graph with non-negative edge weights. It greedily selects the unvisited node with the lowest distance estimate using a Min-Priority Queue.",
+    "floyd-warshall": "The Floyd-Warshall Algorithm computes All-Pairs Shortest Paths in O(V³) time. It uses Dynamic Programming, iteratively updating a distance matrix to check if a path between two nodes is shorter when routed through an intermediate node 'k'."
+};
+
+const explanationModal = document.getElementById('explanation-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const closeBtn = document.querySelector('.close-btn');
+
+document.querySelectorAll('.explain-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const id = e.target.getAttribute('data-id');
+        const title = e.target.previousElementSibling.previousElementSibling.innerText;
+        
+        modalTitle.innerText = title;
+        modalBody.innerText = explanationsData[id] || "Explanation not found.";
+        
+        explanationModal.style.display = 'flex';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    explanationModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === explanationModal) {
+        explanationModal.style.display = 'none';
+    }
+});

@@ -141,6 +141,7 @@
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Insertion Sort</h3>
                     <p>Inserts elements into a sorted subarray. O(n^2)</p>
+                    <button class="explain-btn" data-id="insertion-sort">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     subgraph Sorted
@@ -156,6 +157,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Merge Sort</h3>
                     <p>Divide & Conquer. Recursively splits and merges. O(n log n)</p>
+                    <button class="explain-btn" data-id="merge-sort">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     A["[38, 27, 43, 3]"] --> B["[38, 27]"]
@@ -170,6 +172,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Heap Sort</h3>
                     <p>Uses a Max-Heap structure for O(n log n) sorting.</p>
+                    <button class="explain-btn" data-id="heap-sort">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     H1((16)) --> H2((14))
@@ -184,6 +187,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Quick Sort</h3>
                     <p>Partitions around a pivot. Best in practice.</p>
+                    <button class="explain-btn" data-id="quick-sort">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     Q1["Pivot: 5 | [3, 1, 8, 4, 7]"] --> Q2["Left (<5): [3, 1, 4]"]
@@ -194,6 +198,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Counting Sort</h3>
                     <p>Counts occurrences for O(n+k) linear sorting.</p>
+                    <button class="explain-btn" data-id="counting-sort">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class Counting_Array_C {
@@ -211,6 +216,7 @@ classDiagram
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Stack</h3>
                     <p>LIFO (Last-In, First-Out).</p>
+                    <button class="explain-btn" data-id="stack">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     Push --> top["Top (Last-In)"]
@@ -223,6 +229,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Queue</h3>
                     <p>FIFO (First-In, First-Out).</p>
+                    <button class="explain-btn" data-id="queue">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     Enqueue --> Tail["Tail"]
@@ -235,6 +242,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Doubly Linked List</h3>
                     <p>Each node has a next and prev pointer.</p>
+                    <button class="explain-btn" data-id="doubly-linked-list">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     Head["Head"] <--> N1["Node 1"]
@@ -246,6 +254,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Binary Tree</h3>
                     <p>Each node has at most two children.</p>
+                    <button class="explain-btn" data-id="binary-tree">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     Parent((P)) --> LeftChild((L))
@@ -268,6 +277,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Rod Cut</h3>
                     <p>Finds max revenue by testing all sub-cuts.</p>
+                    <button class="explain-btn" data-id="rod-cut">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class Max_Revenue_Memo {
@@ -282,6 +292,7 @@ classDiagram
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Matrix Multiplication</h3>
                     <p>Optimal parenthesis grouping to minimize operations.</p>
+                    <button class="explain-btn" data-id="matrix-multiplication">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class Min_Cost_m_ij {
@@ -295,6 +306,7 @@ classDiagram
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Longest Common Subsequence</h3>
                     <p>Finds longest shared sequence in 2D grid.</p>
+                    <button class="explain-btn" data-id="longest-common-subsequence">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class LCS_Table_c_ij {
@@ -308,6 +320,7 @@ classDiagram
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Optimal BST</h3>
                     <p>Minimizes expected search cost.</p>
+                    <button class="explain-btn" data-id="optimal-bst">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class Expected_Cost_e_ij {
@@ -323,6 +336,7 @@ classDiagram
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Breadth-First Search (BFS)</h3>
                     <p>Explores neighbors level by level using a Queue.</p>
+                    <button class="explain-btn" data-id="breadth-first-search-bfs">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     Center((C)) --- n1((1))
@@ -337,6 +351,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Depth-First Search (DFS)</h3>
                     <p>Explores deeply, records Discovery (d) and Finish (f) times.</p>
+                    <button class="explain-btn" data-id="depth-first-search-dfs">Explain Visual</button>
                     <div class="mermaid">
 graph TD
     A["A [d:1, f:10]"] --> B["B [d:2, f:5]"]
@@ -348,6 +363,7 @@ graph TD
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Topological Sort</h3>
                     <p>Linear ordering of a DAG based on dependencies.</p>
+                    <button class="explain-btn" data-id="topological-sort">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     Socks --> Shoes
@@ -361,6 +377,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Strongly Connected Component</h3>
                     <p>Maximal sets where every vertex is reachable from every other.</p>
+                    <button class="explain-btn" data-id="strongly-connected-component">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     subgraph SCC1
@@ -379,6 +396,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Prim's Min Spanning Tree</h3>
                     <p>Grows MST one edge at a time using a Min-Priority Queue.</p>
+                    <button class="explain-btn" data-id="prim-s-min-spanning-tree">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     A((A)) ---|4| B((B))
@@ -393,6 +411,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Bellman-Ford</h3>
                     <p>Shortest paths. Handles negative weight edges & cycle detection.</p>
+                    <button class="explain-btn" data-id="bellman-ford">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     S((S)) -->|-5| A((A))
@@ -404,6 +423,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Dijkstra's Algorithm</h3>
                     <p>Shortest paths for non-negative edges via greedy selection.</p>
+                    <button class="explain-btn" data-id="dijkstra-s-algorithm">Explain Visual</button>
                     <div class="mermaid">
 graph LR
     S["S(0)"] -->|10| A["A(10)"]
@@ -417,6 +437,7 @@ graph LR
                 <div class="visual-card glass">
                     <h3 class="algorithm-title">Floyd-Warshall</h3>
                     <p>All-Pairs Shortest Path using DP distance matrix.</p>
+                    <button class="explain-btn" data-id="floyd-warshall">Explain Visual</button>
                     <div class="mermaid">
 classDiagram
     class Distance_Matrix_D {
@@ -431,5 +452,15 @@ classDiagram
     </main>
 
     <script src="script.js"></script>
+
+    <!-- Explanation Modal -->
+    <div id="explanation-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title" class="algorithm-title">Title</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
 </body>
 </html>
